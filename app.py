@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from datetime import datetime
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import os
 from dotenv import load_dotenv
 
@@ -16,7 +16,8 @@ entries = []
 class Entry:
     content: str
     happiness: str = ""
-    timestamp: datetime = datetime.now()
+    # default_factory: set the time when the entry is created, not at app start
+    timestamp: datetime = field(default_factory=datetime.now)
 
 
 @app.route("/")
