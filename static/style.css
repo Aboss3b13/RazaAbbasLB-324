@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    margin: 0;
+}
+
+.container {
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 24px 32px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 1.1em;
+    color: #555;
+}
+
+a {
+    color: #2980b9;
+}
+
+textarea,
+input[type="password"],
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+select {
+    width: auto;
+}
+
+button {
+    padding: 8px 16px;
+    background: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1f6391;
+}
+
+.entries {
+    list-style: none;
+    padding: 0;
+}
+
+.entries li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.time {
+    color: #888;
+    font-size: 0.85em;
+}
+
+.flashes {
+    color: #c0392b;
+}
