@@ -36,7 +36,7 @@ Manuell alle Hooks ausführen: `pre-commit run --all-files` bzw. `pre-commit run
 ## Aufgabe 4
 Erklären Sie hier, wie Sie das Passwort aus Ihrer lokalen `.env` auf Azure übertragen.
 
-URL der laufenden Applikation: https://razaabbas-lb324.azurewebsites.net
+URL der laufenden Applikation: https://razaabbas-lb324-fmhzatesdhgpd8c9.switzerlandnorth-01.azurewebsites.net
 
 Die `.env` wird nicht eingecheckt (`.gitignore`), darum muss das Passwort als Umgebungsvariable in Azure gesetzt werden.
 `load_dotenv()` überschreibt keine bestehenden Variablen, `os.getenv("PASSWORD")` liest also den Wert aus Azure.
