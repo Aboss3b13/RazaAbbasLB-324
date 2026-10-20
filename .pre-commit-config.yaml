@@ -1,0 +1,21 @@
+# installs both hook types with a plain `pre-commit install`
+default_install_hook_types: [pre-commit, pre-push]
+
+repos:
+  # on every commit: format the code automatically
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.8.0
+    hooks:
+      - id: black
+        stages: [pre-commit]
+
+  # on every push: run the tests
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: python -m pytest
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
