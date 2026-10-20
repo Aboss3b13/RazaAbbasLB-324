@@ -15,6 +15,7 @@ entries = []
 @dataclass
 class Entry:
     content: str
+    happiness: str = ""
     timestamp: datetime = datetime.now()
 
 
@@ -47,8 +48,9 @@ def logout():
 def add_entry():
     content = request.form.get("content")
     if content:
-        entry = Entry(content=content)
-        entries.append(entry)
+        entry = Entry(content=content, happiness=request.form.get("happiness", ""))
+        # newest entry first
+        entries.insert(0, entry)
     return redirect(url_for("index"))
 
 
