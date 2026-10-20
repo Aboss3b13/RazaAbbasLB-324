@@ -1,3 +1,4 @@
+import time
 from app import app, entries
 
 import pytest
@@ -42,3 +43,12 @@ def test_add_entry_with_happiness(client):
     assert entry is not None
     assert entry.content == "Test Entry Content"
     assert entry.happiness == "😃"
+
+
+def test_entries_have_own_timestamp(client):
+    # Test that every entry gets the time it was created
+    client.post("/add_entry", data={"content": "Erster"})
+    time.sleep(0.01)
+    client.post("/add_entry", data={"content": "Zweiter"})
+
+    assert entries[0].timestamp > entries[1].timestamp
